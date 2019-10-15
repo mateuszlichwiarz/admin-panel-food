@@ -6,5 +6,7 @@
 
     class FoodController
     {
-
+        public function index() {
+            return new Response('<html><body>Hello world!</body></html>');
+        }
     }
