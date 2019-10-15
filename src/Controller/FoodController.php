@@ -4,6 +4,7 @@
 
     use Symfony\Componen\HttpFoundation\Response;
 
-    class FoodController{
-        
+    class FoodController
+    {
+
     }
