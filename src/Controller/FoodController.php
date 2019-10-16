@@ -12,6 +12,6 @@
          * @Route("/food")
          */
         public function index() {
-            return new Response('<html><body>Hello world!</body></html>');
+            return $this->render('food/index.html.twig');
         }
     }
