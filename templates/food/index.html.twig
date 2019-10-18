@@ -4,4 +4,20 @@
 
 {% block body %}
     <h1>Food</h1>
+        {% if foods %}
+            <table id="foods" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Food</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for food in foods %}
+                    <tr>
+                        <td>{{ food.name }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
 {% endblock %}
