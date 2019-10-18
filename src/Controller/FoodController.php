@@ -12,6 +12,9 @@
          * @Route("/food")
          */
         public function index() {
-            return $this->render('food/index.html.twig');
+
+            $foods = $this->getDoctrine()->getRepository(Pizza::class)->findAll();
+
+            return $this->render('food/index.html.twig', array('foods' => $foods));
         }
     }
