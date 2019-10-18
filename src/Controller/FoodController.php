@@ -15,7 +15,7 @@
          */
         public function index() {
 
-            $foods = $this->getDoctrine()->getRepository(Pizza::class)->findAll();
+            $foods = $this->getDoctrine()->getRepository(Food::class)->findAll();
 
             return $this->render('food/index.html.twig', array('foods' => $foods));
         }
