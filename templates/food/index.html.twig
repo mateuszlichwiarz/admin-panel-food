@@ -3,24 +3,26 @@
 {% block title %} SymphFood {% endblock %}
 
 {% block body %}
+    <br>
     <h1>Food</h1>
-        {% if foods %}
-            <table id="foods" class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Product:</th>
-                    </tr>
-                </thead>
-                <tbody>
-                {% for food in foods %}
-                    <tr>
-                        <td>{{ food.name }}</td>
-                        <td>
-                            <a href="/food/{{ food.id }}" class="btn btn-dark">Show</a>
-                        </td>
-                    </tr>
-                {% endfor %}
-                </tbody>
-            </table>
-        {% endif %}
+    <br>
+    {% if foods %}
+        <table id="foods" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Product:</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for food in foods %}
+                <tr>
+                    <td>{{ food.name }}</td>
+                    <td>
+                        <a href="/food/{{ food.id }}" class="btn btn-dark">Show</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
 {% endblock %}
