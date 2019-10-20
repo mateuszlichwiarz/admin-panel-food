@@ -29,4 +29,11 @@
 
             return $this->render('food/index.html.twig', array('foods' => $foods));
         }
+
+        public function showItem($id) {
+
+            $item = $this->getDoctrine()->getRepository(Food::class)->find($id);
+
+            return $this->render('food/show.html.twig', array('item' => $item));
+        }
     }
