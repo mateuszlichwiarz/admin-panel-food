@@ -31,7 +31,7 @@
         }
 
         /**
-         * @rest\("/({id})")
+         * @Rest\Get("/{id}")
          * 
          * @return Response
          */
