@@ -15,6 +15,9 @@
                 {% for food in foods %}
                     <tr>
                         <td>{{ food.name }}</td>
+                        <td>
+                            <a href="/food/{{ food.id }}" class="btn btn-dark">Show</a>
+                        </td>
                     </tr>
                 {% endfor %}
                 </tbody>
