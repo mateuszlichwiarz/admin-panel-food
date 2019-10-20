@@ -5,17 +5,23 @@
     use App\Entity\Food;
 
     use FOS\RestBundle\Controller\FOSRestController;
-    use FOS\RestBundle\Controller\Anoonations as Rest;
+    use FOS\RestBundle\Controller\Annotations as Rest;
 
     use Symfony\Component\HttpFoundation\Request;
     use Symfony\Component\HttpFoundation\Response;
     use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
     use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-    class FoodController extends AbstractController
+    /**
+     * Food controller
+     * @Route("/food", name="food_")
+     */
+    class FoodController extends FOSRestController
     {
         /**
-         * @Route("/food")
+         * @Rest\Get("")
+         * 
+         * @return Response
          */
         public function index() {
 
