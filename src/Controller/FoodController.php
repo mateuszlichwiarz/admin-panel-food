@@ -30,6 +30,11 @@
             return $this->render('food/index.html.twig', array('foods' => $foods));
         }
 
+        /**
+         * @rest\("/({id})")
+         * 
+         * @return Response
+         */
         public function showItem($id) {
 
             $item = $this->getDoctrine()->getRepository(Food::class)->find($id);
