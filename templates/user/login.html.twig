@@ -3,7 +3,12 @@
 {% block title %} Login {% endblock %}
 
 {% block body %}
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    {{ form_end(form) }}
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <br>
+        <h2 class="text-center">Sign-in</h2>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+
+    </div>
 {% endblock %}
