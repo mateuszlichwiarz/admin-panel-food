@@ -2,6 +2,10 @@
 
     namespace App\Controller;
 
+    use App\Form\Type\UserType;
+
+    use App\Entity\Food;
+
     use FOS\RestBundle\Controller\FOSRestController;
     use FOS\RestBundle\Controller\Annotations as Rest;
 
@@ -21,7 +25,14 @@
          * @return Response
          */
         public function login() {
+            $food = new Food;
+
+            $form = $this->createForm(UserType::class, $food, [
+                'method' => 'POST'
+            ]);
             
-            return $this->render('user/login.html.twig');
+            return $this->render('user/login.html.twig', array(
+                'form' => $form->createView()
+            ));
         }
     }
