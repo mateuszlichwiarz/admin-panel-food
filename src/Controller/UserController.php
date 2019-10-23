@@ -15,7 +15,11 @@
      */
     class UserController extends FOSRestController
     {
-
+        /**
+         *  @Rest\Get("/login")
+         * 
+         * @return Response
+         */
         public function login() {
             
             return $this->render('user/login.html.twig');
