@@ -10,7 +10,9 @@
     use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
     use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-
+    /**
+     * @Route("/users", name="_users")
+     */
     class UserController extends FOSRestController
     {
 
