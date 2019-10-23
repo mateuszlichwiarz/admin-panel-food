@@ -9,3 +9,13 @@
     use Symfony\Component\HttpFoundation\Response;
     use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
     use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
+
+    class UserController extends FOSRestController
+    {
+
+        public function login() {
+            
+            return $this->render('user/login.html.twig');
+        }
+    }
