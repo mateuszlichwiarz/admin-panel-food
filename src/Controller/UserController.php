@@ -4,7 +4,7 @@
 
     use App\Form\Type\UserType;
 
-    use App\Entity\Food;
+    use App\Entity\Users;
 
     use FOS\RestBundle\Controller\FOSRestController;
     use FOS\RestBundle\Controller\Annotations as Rest;
@@ -25,9 +25,9 @@
          * @return Response
          */
         public function login() {
-            $food = new Food;
+            $user = new Users;
 
-            $form = $this->createForm(UserType::class, $food, [
+            $form = $this->createForm(UserType::class, $user, [
                 'method' => 'POST'
             ]);
             
