@@ -32,6 +32,7 @@ class Users implements UserInterface
      */
     private $username;
 
+    
     public function __construct(string $username) {
         $this->username = $username;
     }
