@@ -45,8 +45,11 @@
     public function adminPanel() {
         $foods = $this->getDoctrine()->getRepository(Food::class)->findAll();
 
+        $admin = 0;
+
         return $this->render('food/index.html.twig', array(
-            'foods' => $foods
+            'foods' => $foods,
+            'admin' => $admin
         ));
     }
         
