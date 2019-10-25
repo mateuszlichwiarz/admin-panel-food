@@ -19,7 +19,7 @@ security:
                 check_path: login
             logout:
                 path: /logout
-                target: /
+                target: /food
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
