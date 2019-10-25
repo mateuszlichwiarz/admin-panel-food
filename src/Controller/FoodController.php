@@ -14,7 +14,7 @@
 
     /**
      * Food controller
-     * @Route("/food", name="food_")
+     * @Route("/food", name="_food")
      */
     class FoodController extends FOSRestController
     {
