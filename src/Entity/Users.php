@@ -32,14 +32,14 @@ class Users implements UserInterface
      */
     private $username;
 
-    
+
     public function __construct(string $username) {
         $this->username = $username;
     }
 
     public function getRoles() 
     {
-        return ['ROLE_USER'];
+        return ['ROLE_ADMIN'];
     }
 
     public function getSalt() 
