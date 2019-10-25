@@ -26,7 +26,18 @@
          * 
          * @return Response
          */
-        public function login() {
-            
+        public function login(Request $request, AuthenticationUtils $authenticationUtils) {
+            $errors = $authenticationUtils->getLastAuthenticationError();
+            $lastUsername = $authenticationUtils->getLastUsername();
+
+            return $this->render('User/login.html.twig', [
+                'errors' => $errors,
+                'username' => $lastUsername
+            ]);
         }
+
+        /**
+         * @Rest\Get("/logout", name="logout")
+         */
+        public function logout(): Response {}
     }
