@@ -20,19 +20,11 @@
     class UserController extends FOSRestController
     {
         /**
-         *  @Rest\Get("/login")
+         *  @Rest\Get("/login", name="login")
          * 
          * @return Response
          */
         public function login() {
-            $user = new Users;
-
-            $form = $this->createForm(UserType::class, $user, [
-                'method' => 'POST'
-            ]);
             
-            return $this->render('user/login.html.twig', array(
-                'form' => $form->createView()
-            ));
         }
     }
