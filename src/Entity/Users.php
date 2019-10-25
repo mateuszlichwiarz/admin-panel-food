@@ -3,15 +3,16 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UsersRepository")
  */
-class Users
+class Users implements UserInterface
 {
     /**
      * @ORM\Id()
-     * @ORM\GeneratedValue()
+     * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(type="integer")
      */
     private $id;
@@ -22,14 +23,33 @@ class Users
     private $email;
 
     /**
-     * @ORM\Column(type="string", length=32)
-     */
-    private $login;
-
-    /**
      * @ORM\Column(type="string", length=255)
      */
     private $password;
+
+    /**
+     * @ORM\Column(type="string", length=25)
+     */
+    private $username;
+
+    public function __construct(string $username) {
+        $this->username = $username;
+    }
+
+    public function getRoles() 
+    {
+        return ['ROLE_USER'];
+    }
+
+    public function getSalt() 
+    {
+
+    }
+
+    public function eraseCredentials() 
+    {
+
+    }
 
     public function getId(): ?int
     {
@@ -68,6 +88,18 @@ class Users
     public function setPassword(string $password): self
     {
         $this->password = $password;
+
+        return $this;
+    }
+
+    public function getUsername(): ?string
+    {
+        return $this->username;
+    }
+
+    public function setUsername(string $username): self
+    {
+        $this->username = $username;
 
         return $this;
     }
