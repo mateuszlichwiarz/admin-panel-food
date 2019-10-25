@@ -41,8 +41,8 @@
          */
         public function load(ObjectManager $manager) : void {
             $user = new Users('Admin');
-            $password = $this->encoder->encodePassword($user, 'secret');
-            $user->setPassword($password)->setEmail('user@email.com');
+            $password = $this->encoder->encodePassword($user, 'password');
+            $user->setPassword($password)->setEmail('admin@email.com');
 
             $this->entityManager->persist($user);
             $this->entityManager->flush();
