@@ -38,6 +38,17 @@
             'username' => $lastUsername
         ]);
     }
+
+    /**
+     * @Rest\Get("/admin/food")
+     */
+    public function adminPanel() {
+        $foods = $this->getDoctrine()->getRepository(Food::class)->findAll();
+
+        return $this->render('food/index.html.twig', array(
+            'foods' => $foods
+        ));
+    }
         
     /**
     * @Rest\Get("/logout", name="logout")
