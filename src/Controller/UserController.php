@@ -19,20 +19,20 @@
      * 
      *
      * @package App\Controller
-     * 
+     * @Route("admin")
      * 
      */
     class UserController extends FOSRestController {
     
     /**
-    * @Route("users/login", name="login")
+    * @Route("/login", name="login")
     *
     * @return Response
     */ 
     public function login(Request $request, AuthenticationUtils $authenticationUtils) {
         $errors = $authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
-    
+        
         return $this->render('User/login.html.twig', [
             'errors' => $errors,
             'username' => $lastUsername
@@ -40,7 +40,7 @@
     }
 
     /**
-     * @Rest\Get("/admin/food")
+     * @Rest\Get("/food")
      */
     public function adminPanel() {
         $foods = $this->getDoctrine()->getRepository(Food::class)->findAll();
