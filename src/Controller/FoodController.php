@@ -14,12 +14,12 @@
 
     /**
      * Food controller
-     * @Route("/food", name="food_")
+     * @Route("/", name="_food")
      */
     class FoodController extends FOSRestController
     {
         /**
-         * @Rest\Get("")
+         * @Rest\Get("food")
          * 
          * @return Response
          */
@@ -31,7 +31,7 @@
         }
 
         /**
-         * @Rest\Get("/{id}")
+         * @Rest\Get("food/{id}")
          * 
          * @return Response
          */
