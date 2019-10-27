@@ -16,10 +16,10 @@ security:
             anonymous: true
             form_login:
                 login_path: login
-                check_path: login
+                check_path: food\
             logout:
-                path: /logout
-                target: /food
+                path: admin/logout
+                target: admin/login
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
