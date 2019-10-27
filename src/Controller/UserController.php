@@ -39,9 +39,7 @@
         }
             
         /**
-        * @Rest\Get("/logout", name="logout")
-        * 
-        * @return Response
+        * @Route("/logout", name="logout")
         */
         public function logout() : Response {}
 
