@@ -8,17 +8,16 @@
     <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <br>
         <h2 class="text-center">Sign-in</h2>
-
-        {% if errors %}
-            {{ errors.messageKey }}
-        {% endif %}
         
         <form action="{{ path('login') }}" method="post">
+            {% if errors %}
+                <div class="alert alert-danger">{{ errors.messageKey }} </div>
+            {% endif %}
             <label for="username">Username:</label>
             <input type="text" name="_username" id="username" class='form-control' value="{{ username }}">
 
             <label for="password">Password:</label>
-            <input type="text" name="_password" id="password" class='form-control'>
+            <input type="password" name="_password" id="password" class='form-control'>
 
             <button type="submit" class='btn btn-primary mt-3'>Login</button>
         </form>
