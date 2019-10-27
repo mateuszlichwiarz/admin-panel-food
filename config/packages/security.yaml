@@ -16,7 +16,7 @@ security:
             anonymous: true
             form_login:
                 login_path: login
-                check_path: food\
+                check_path: login
             logout:
                 path: admin/logout
                 target: admin/login
