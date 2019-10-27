@@ -41,4 +41,14 @@
 
             return $this->render('food/show.html.twig', array('item' => $item));
         }
+
+        public function editItem($id) {
+
+            $item = new Food();
+            $item = $this->getDoctrine()->getRepository(Food::class)->find($id);
+
+            $form = $this->createForm(ItemType::class, $item, [
+                'method' => 'PUT'
+            ]);
+        }
     }
