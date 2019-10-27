@@ -29,6 +29,6 @@
         {
             $resolver->setDefaults([
                 'data_class' => Food::class,
-            ])
+            ]);
         }
     }
