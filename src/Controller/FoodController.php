@@ -42,6 +42,11 @@
             return $this->render('food/show.html.twig', array('item' => $item));
         }
 
+        /**
+         * @Rest\Put("/{id}")
+         * 
+         * @return Response
+         */
         public function editItem($id) {
 
             $item = new Food();
@@ -50,5 +55,9 @@
             $form = $this->createForm(ItemType::class, $item, [
                 'method' => 'PUT'
             ]);
+
+            return $this->render('food/edit.html.twig', array(
+                'form' => $form->createView()
+            ));
         }
     }
