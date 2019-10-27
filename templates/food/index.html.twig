@@ -11,10 +11,10 @@
             <thead>
                 <tr>
                     <th>Product:</th>
+                    <th>Action:</th>
                 </tr>
             </thead>
             <tbody>
-            {% if admin is defined %}
             {% for food in foods %}
                 <tr>
                     <td>{{ food.name }}</td>
@@ -26,7 +26,7 @@
                             <div class="col-md-1">
                                 <form method="POST" action="/food/{{ food.id }}">
                                 <input type="hidden" name="_method" value="PUT"/>
-                                <input type="submit" class="btn btn-primary" value="Edit">
+                                <input type="submit" class="btn btn-secondary" value="Edit">
                             </div>
                             <div class="col-md-1">
                                 <a href="" class="btn btn-danger delete-food" data-id="{{ food.id }}">Delete</a>
@@ -35,16 +35,6 @@
                     </td>
                 </tr>
             {% endfor %}
-            {% else %}
-                {% for food in foods %}
-                <tr>
-                    <td>{{ food.name }}</td>
-                    <td>
-                        <a href="/food/{{ food.id }}" class="btn btn-dark">Show</a>
-                    </td>
-                </tr>
-            {% endfor %}
-            {% endif %}
             </tbody>
         </table>
     {% endif %}
