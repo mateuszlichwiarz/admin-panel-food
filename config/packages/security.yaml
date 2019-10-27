@@ -17,9 +17,14 @@ security:
             form_login:
                 login_path: login
                 check_path: login
+                use_forward: false
+                always_use_default_target_path: false
+                default_target_path: /admin/food
+                target_path_parameter: _target_path
+                use_referer: false
             logout:
-                path: admin/logout
-                target: admin/login
+                path: logout
+                target: login
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
