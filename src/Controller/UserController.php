@@ -2,8 +2,6 @@
 
 
     namespace App\Controller; 
-    
-    use App\Entity\Food;
 
     use FOS\RestBundle\Controller\FOSRestController;
     use FOS\RestBundle\Controller\Annotations as Rest;
