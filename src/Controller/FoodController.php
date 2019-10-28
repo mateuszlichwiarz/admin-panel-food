@@ -49,7 +49,7 @@
          * 
          * @return Response
          */
-        public function editItem($id) {
+        public function editItem(Request $request, $id) {
 
             $item = new Food();
             $item = $this->getDoctrine()->getRepository(Food::class)->find($id);
@@ -57,6 +57,18 @@
             $form = $this->createForm(ItemType::class, $item, [
                 'method' => 'PUT'
             ]);
+
+            $form->handleRequest($request);
+
+            if($form->isSubmitted() && $form->isValid()) {
+
+                $entityManager = $this->getDoctrine()->getManager();
+                $entityManager->flush();
+                
+                $url = '/admin/food'.'/'.$id;
+
+                return $this->redirect($url);
+            }
 
             return $this->render('food/edit.html.twig', array(
                 'form' => $form->createView()
