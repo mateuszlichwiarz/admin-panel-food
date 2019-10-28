@@ -12,7 +12,7 @@
 
     class ItemType extends AbstractType 
     {
-        public function buidForm(FormBuilderInterface $builder, array $options)
+        public function buildForm(FormBuilderInterface $builder, array $options)
         {
             $builder
                 ->add('name',        textType::class,     array('attr' => array('class' => 'form-control')))
