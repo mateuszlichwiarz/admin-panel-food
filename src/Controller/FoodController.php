@@ -74,4 +74,13 @@
                 'form' => $form->createView()
             ));
         }
+
+        /**
+         * @Rest\Delete("/{id}")
+         * 
+         * @return Response
+         */
+        public function deleteItem() {
+            
+        }
     }
