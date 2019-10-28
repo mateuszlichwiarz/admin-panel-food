@@ -80,7 +80,15 @@
          * 
          * @return Response
          */
-        public function deleteItem() {
-            
+        public function deleteItem(Request $request, $id) {
+
+            $item = $this->getDoctrine()->getRepository(Food::class)->find($id);
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($item);
+            $entityMnager->flush();
+
+            $response = new Response();
+            $response->send;
         }
     }
