@@ -21,15 +21,15 @@
                     <td>
                         <div class="row">
                             <div class="col-md-1">
-                                <a href="/food/{{ food.id }}" class="btn btn-dark">Show</a>
+                                <a href="/admin/food/{{ food.id }}" class="btn btn-dark">Show</a>
                             </div>
                             <div class="col-md-1">
-                                <form method="POST" action="/food/{{ food.id }}">
+                                <form method="POST" action="/admin/food/{{ food.id }}">
                                 <input type="hidden" name="_method" value="PUT"/>
                                 <input type="submit" class="btn btn-secondary" value="Edit">
                             </div>
                             <div class="col-md-1">
-                                <a href="" class="btn btn-danger delete-food" data-id="{{ food.id }}">Delete</a>
+                                <a href="" class="btn btn-danger delete-food" data-id="/admin/food/{{ food.id }}">Delete</a>
                             </div>
                         </div>
                     </td>
