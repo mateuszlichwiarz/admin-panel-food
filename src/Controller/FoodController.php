@@ -95,7 +95,17 @@
          * 
          * @return Response
          */
-        public function newItem() {
+        public function newItem(Request $request) {
+
+            $item = new Food();
+
+            $form = $this->createForm(ItemType::class, $item, [
+                'method' => 'POST'
+            ]);
+
+            return $this->render('food/new.html.twig', array(
+                'form' => $form->createView()
+            ));
 
         }
     }
