@@ -1,7 +1,7 @@
-const itemDelete = document.getElementById('item');
+const itemDelete  = document.getElementById('foods');
 
 if(itemDelete) {
-    itemDelete.addEventListner('click', e=>{
+    itemDelete.addEventListener('click', e =>{
         if(e.target.className === 'btn btn-danger delete-item') {
             if(confirm('Are you sure?')) {
                 const id = e.target.getAttribute('data-id');

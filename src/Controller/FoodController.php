@@ -77,18 +77,16 @@
 
         /**
          * @Rest\Delete("/{id}")
-         * 
-         * @return Response
          */
-        public function deleteItem(Request $request, $id) {
-
-            $item = $this->getDoctrine()->getRepository(Food::class)->find($id);
+        public function deletePizza(Request $request, $id) {
+            $food = $this->getDoctrine()->getRepository(Food::class)->find($id);
 
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($item);
-            $entityMnager->flush();
+            $entityManager->remove($food);
+            $entityManager->flush();
 
             $response = new Response();
-            $response->send;
+            $response->send();
+
         }
     }
