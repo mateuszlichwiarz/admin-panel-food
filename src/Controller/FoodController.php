@@ -41,7 +41,17 @@
 
             $item = $this->getDoctrine()->getRepository(Food::class)->find($id);
 
-            return $this->render('food/show.html.twig', array('item' => $item));
+            $type = $item->getType();
+            $ucfirstType = ucfirst($type);
+
+            $name = $item->getName();
+            $ucfirstName = ucfirst($name);
+
+            return $this->render('food/show.html.twig', array(
+                'item' => $item, 
+                'type' => $ucfirstType, 
+                'name' => $ucfirstName
+            ));
         }
 
         /**
