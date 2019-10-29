@@ -103,6 +103,18 @@
                 'method' => 'POST'
             ]);
 
+            $form->handleRequest($request);
+
+            if($form->isSubmitted() && $form->isValid()) {
+                $item = $form->getData();
+
+                $entityManager = $this->getDoctrine()->getManager();
+                $entityManager->persist($item);
+                $entityManager->flush();
+
+                return $this->Redirect('/admin/food');
+            }
+
             return $this->render('food/new.html.twig', array(
                 'form' => $form->createView()
             ));
