@@ -78,7 +78,7 @@
         /**
          * @Rest\Delete("/{id}")
          */
-        public function deletePizza(Request $request, $id) {
+        public function deleteItem(Request $request, $id) {
             $food = $this->getDoctrine()->getRepository(Food::class)->find($id);
 
             $entityManager = $this->getDoctrine()->getManager();
@@ -87,6 +87,15 @@
 
             $response = new Response();
             $response->send();
+
+        }
+
+        /**
+         * @Rest\Get("/new")
+         * 
+         * @return Response
+         */
+        public function newItem() {
 
         }
     }
