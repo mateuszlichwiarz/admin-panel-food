@@ -37,5 +37,11 @@
             {% endfor %}
             </tbody>
         </table>
+    {% else %}
+        <p>No items.</p>
     {% endif %}
+{% endblock %}
+
+{% block javascripts %}
+    <script src="/js/main.js"></script>
 {% endblock %}
