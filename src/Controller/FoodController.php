@@ -91,7 +91,7 @@
         }
 
         /**
-         * @Rest\Get("/new")
+         * @Rest\Post("/new", name="new_item")
          * 
          * @return Response
          */
