@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} SymphFood {% endblock %}
+
+{% block body %}
+    <br>
+    <h1>{{ type }}</h1>
+    <br>
+    {% if foods %}
+        <table id="foods" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Product:</th>
+                    <th>Action:</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for food in foods %}
+                <tr>
+                    <td>{{ food.name }}</td>
+                    <td>
+                        <div class="row">
+                            <div class="col-md-1">
+                                <a href="/admin/food/{{ food.id }}" class="btn btn-dark">Show</a>
+                            </div>
+                            <div class="col-md-1">
+                                <form method="POST" action="/admin/food/{{ food.id }}">
+                                <input type="hidden" name="_method" value="PUT"/>
+                                <input type="submit" class="btn btn-secondary" value="Edit">
+                                </form>
+                            </div>
+                            <div class="col-md-1">
+                                <a href="" class="btn btn-danger delete-item" data-id="{{ food.id }}">Delete</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No items.</p>
+    {% endif %}
+{% endblock %}
+
+{% block javascripts %}
+    <script src="/js/main.js"></script>
+{% endblock %}
