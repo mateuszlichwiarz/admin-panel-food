@@ -32,14 +32,14 @@
             return $this->render('food/index.html.twig', array('foods' => $foods));
         }
 
-        public function showItemType() {
-            
-        }
-
         /**
-         * @Rest\Get("/{id}")
-         * 
-         * @return Response
+         * @Route(
+         *      "/{id}",
+         *      name="show_item", 
+         *      requirements={
+         *          "id": "\d+"
+         *      } 
+         * )
          */
         public function showItem($id) {
 
