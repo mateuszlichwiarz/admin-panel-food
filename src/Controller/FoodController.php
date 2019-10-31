@@ -56,6 +56,28 @@
                 'type' => $ucfirstType, 
                 'name' => $ucfirstName
             ));
+            
+        }
+
+        /**
+         * @Route(
+         *      "/{slug}",
+         *      name="show_type",   
+         *      requirements={
+         *          "slug": "pizza|burger|salad|others"
+         *      }
+         * )
+         */
+        public function showItemType($slug) {
+            
+            $foods = $this->getDoctrine()->getRepository(Food::class)->findBy(array("type" => $slug));
+
+            $ucfirstType = ucfirst($slug);
+
+            return $this->render('food/itemtype.html.twig', array(
+                'foods' => $foods, 
+                'type' => $ucfirstType
+            ));
         }
 
         /**
