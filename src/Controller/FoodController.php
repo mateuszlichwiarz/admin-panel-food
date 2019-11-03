@@ -33,7 +33,36 @@
         }
 
         /**
+         * @Rest\Delete("/{id}")
+         * 
+         * @return Response
+         */
+        public function deleteItem(Request $request, $id) {
+            
+            $food = $this->getDoctrine()->getRepository(Food::class)->find($id);
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($food);
+            $entityManager->flush();
+
+            $response = new Response();
+            $response->send();
+
+        }
+
+        /**
          * @Route(
+         *      "/about",
+         *      name="_about" 
+         * )
+         */
+        public function about() {
+            
+            return $this->render('food/about.html.twig');
+        }
+
+        /**
+         * @Rest\Get(
          *      "/{id}",
          *      name="show_item", 
          *      requirements={
@@ -60,7 +89,7 @@
         }
 
         /**
-         * @Route(
+         * @Rest\Get(
          *      "/{slug}",
          *      name="show_type",   
          *      requirements={
@@ -109,21 +138,6 @@
             return $this->render('food/edit.html.twig', array(
                 'form' => $form->createView()
             ));
-        }
-
-        /**
-         * @Rest\Delete("/{id}")
-         */
-        public function deleteItem(Request $request, $id) {
-            $food = $this->getDoctrine()->getRepository(Food::class)->find($id);
-
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($food);
-            $entityManager->flush();
-
-            $response = new Response();
-            $response->send();
-
         }
 
         /**
