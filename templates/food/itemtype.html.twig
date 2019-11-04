@@ -30,7 +30,10 @@
                                 </form>
                             </div>
                             <div class="col-md-1">
-                                <a href="" class="btn btn-danger delete-item" data-id="{{ food.id }}">Delete</a>
+                                <form method="POST" action="/admin/food/{{ food.id }}">
+                                <input type="hidden" name="_method" value="DELETE"/>
+                                <input type="submit" class="btn btn-danger delete-item" value="Delete">
+                                </form>
                             </div>
                         </div>
                     </td>
@@ -44,5 +47,5 @@
 {% endblock %}
 
 {% block javascripts %}
-    <script src="/js/main.js"></script>
+
 {% endblock %}

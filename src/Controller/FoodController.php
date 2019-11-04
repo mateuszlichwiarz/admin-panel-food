@@ -40,10 +40,8 @@
          *          "id": "\d+"
          *      }
          * )
-         * 
-         * @return Response
          */
-        public function deleteItem(Request $request, $id) {
+        public function deleteItem($id) {
             
             $food = $this->getDoctrine()->getRepository(Food::class)->find($id);
 
@@ -53,6 +51,8 @@
 
             $response = new Response();
             $response->send();
+
+            return $this->redirect('/admin/food');
 
         }
 
