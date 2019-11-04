@@ -6,19 +6,19 @@
 
     use App\Form\Type\ItemType;
 
-    use FOS\RestBundle\Controller\FOSRestController;
+    use FOS\RestBundle\Controller\AbstractFOSRestController;
     use FOS\RestBundle\Controller\Annotations as Rest;
 
     use Symfony\Component\HttpFoundation\Request;
     use Symfony\Component\HttpFoundation\Response;
-    use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+    use Symfony\Component\Routing\Annotation\Route;
     use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
     /**
      * Food controller
      * @Route("/admin/food", name="_food")
      */
-    class FoodController extends FOSRestController
+    class FoodController extends AbstractFOSRestController
     {
         /**
          * @Rest\Get("")
@@ -33,7 +33,13 @@
         }
 
         /**
-         * @Rest\Delete("/{id}")
+         * @Rest\Delete(
+         *      "/{id}",
+         *      name="_delete_item",
+         *      requirements={
+         *          "id": "\d+"
+         *      }
+         * )
          * 
          * @return Response
          */

@@ -3,7 +3,7 @@
 
     namespace App\Controller; 
 
-    use FOS\RestBundle\Controller\FOSRestController;
+    use FOS\RestBundle\Controller\AbstractFOSRestController;
     use FOS\RestBundle\Controller\Annotations as Rest;
 
     use Symfony\Component\HttpFoundation\Request;
@@ -21,7 +21,7 @@
      * @Route("admin")
      * 
      */
-    class UserController extends FOSRestController {
+    class UserController extends AbstractFOSRestController {
     
         /**
         * @Route("/login", name="login")
