@@ -32,7 +32,7 @@
             $errors = $authenticationUtils->getLastAuthenticationError();
             $lastUsername = $authenticationUtils->getLastUsername();
             
-            return $this->render('User/login.html.twig', [
+            return $this->render('user/login.html.twig', [
                 'errors' => $errors,
                 'username' => $lastUsername
             ]);
