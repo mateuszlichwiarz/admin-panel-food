@@ -16,12 +16,12 @@
 
     /**
      * Food controller
-     * @Route("/admin/food", name="_food")
+     * @Route("/admin/food", name="food")
      */
     class FoodController extends AbstractFOSRestController
     {
         /**
-         * @Rest\Get("")
+         * @Rest\Get("", name="_index")
          * 
          * @return Response
          */
@@ -70,7 +70,7 @@
         /**
          * @Rest\Get(
          *      "/{id}",
-         *      name="show_item", 
+         *      name="_show_item", 
          *      requirements={
          *          "id": "\d+"
          *      } 
@@ -97,7 +97,7 @@
         /**
          * @Rest\Get(
          *      "/{slug}",
-         *      name="show_type",   
+         *      name="_show_type",   
          *      requirements={
          *          "slug": "pizza|burger|salad|others"
          *      }
@@ -116,7 +116,7 @@
         }
 
         /**
-         * @Rest\Put("/{id}")
+         * @Rest\Put("/{id}", name="_edit_item")
          * 
          * @return Response
          */
@@ -147,7 +147,7 @@
         }
 
         /**
-         * @Rest\Post("/new", name="new_item")
+         * @Rest\Post("/new", name="_new_item")
          * 
          * @return Response
          */
