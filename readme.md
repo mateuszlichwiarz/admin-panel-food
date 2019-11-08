@@ -1,1 +1,1 @@
-Website, food online ordering.
+Simple admin panel for food ordering. Created for learning purposes.
