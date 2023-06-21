@@ -1,4 +1,5 @@
-Food admin panel. Simple CRUD. Created for learning purposes.
+Food admin panel. Simple CRUD. Created for learning Symfony framework.
+
 
 Install guide:
 1. clone repo
